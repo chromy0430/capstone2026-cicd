@@ -1,25 +1,13 @@
 # Workflow 이름 (GitHub Actions 탭에 표시됩니다)
 name: CI Pipeline
 
+# 다시
 # 이 Workflow를 실행시키는 조건
 on:
   push:
     branches: [ main, develop ]    # main 또는 develop에 push 시
   pull_request:
     branches: [ main, develop ]    # PR 생성/업데이트 시
-
-steps:
-  - name: Checkout code
-    uses: actions/checkout@v4
-
-  # 실행 권한 부여 단계 추가
-  - name: Grant execute permission for mvnw
-    run: chmod +x backend/mvnw  # 경로가 backend 하위라면 이와 같이 설정
-
-  - name: Maven 빌드 & 테스트
-    run: |
-      cd backend
-      ./mvnw clean package
 
 jobs:
   # ── Job 1: 백엔드 빌드 & 테스트 ──
