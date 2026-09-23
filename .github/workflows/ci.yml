@@ -1,7 +1,6 @@
 # Workflow 이름 (GitHub Actions 탭에 표시됩니다)
 name: CI Pipeline
 
-# 다시
 # 이 Workflow를 실행시키는 조건
 on:
   push:
